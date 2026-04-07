@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Product Management System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Add Product</h2>
+        <form action="InsertServlet" method="POST">
+            <label for="name">Product Name: </label>
+            <input type="text" id="name" name="name"><br><br>
+            
+            <label for="category">Category: </label>
+            <input type="text" id="category" name="category"><br><br>
+            
+            <label for="price">Price(RM): </label>
+            <input type="number" step=".01" min="0" id="price" name="price"><br><br>
+            
+            <label for="quantity">Quantity: </label>
+            <input type="number" min="0" id="quantity" name="quantity"><br><br>
+            
+            <input type="submit" value="Add Product">
+        </form>
+    </body>
+</html>
