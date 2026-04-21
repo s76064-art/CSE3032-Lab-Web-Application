@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Lab 4- Task 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Use JSP Scriplets and JSP Expression in Application</h1>
+            <form class="card" action="processCustomer.jsp">
+                <h2 class="form-title">Customer Discount</h2>
+                <div class="form-group">
+                    <label for="customer-code">Customer Code</label>
+                    <input id="customer-code" name="customerCode" type="text" required placeholder="Key-in customer code">
+                </div>
+                <div class="form-group">
+                    <label for="qty">Quantity</label>
+                    <input id="qty" name="quantity" type="number" required placeholder="Key-in quantity">
+                </div>
+
+
+                <div class="form-group">
+                    <label>Customer Type</label>
+                    <div class="radio-group">
+
+                        <input type="radio" id="normal-customer" name="customerType" value="1">
+                        <label class="radio-label" for="normal-customer">Normal Customer</label>
+
+                        <input type="radio" id="privilege-customer" name="customerType" value="2">
+                        <label class="radio-label" for="privilege-customer">Privilege Customer</label>
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit" class="btn btn-submit" >Submit</button>
+                    <button type="reset" class="btn btn-cancel" >Cancel</button>
+                </div>
+
+            </form>
+        </div>
+
+    </body>
+</html>
