@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg:        #f4f5f7;
+  --surface:   #ffffff;
+  --border:    #dde1e7;
+  --text:      #1a1d23;
+  --muted:     #6b7280;
+  --accent:    #2563eb;
+  --accent-h:  #1d4ed8;
+  --danger:    #dc2626;
+  --danger-h:  #b91c1c;
+  --success:   #16a34a;
+  --radius:    8px;
+  --shadow:    0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.10);
+}
+
+/* ── Reset & Base ─────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+/* ── Card Container ───────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  max-width: 440px;
+  padding: 36px 40px;
+}
+
+/* ── Page Title / Header ──────────────────── */
+h1, h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+/* Divider under heading */
+h1 + form, h2 + form { margin-top: 24px; }
+
+/* ── Form Layout ──────────────────────────── */
+form { display: flex; flex-direction: column; gap: 16px; }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"] {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  color: var(--text);
+  background: var(--surface);
+  transition: border-color .15s, box-shadow .15s;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="file"]:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+}
+
+input[type="file"] {
+  cursor: pointer;
+  padding: 7px 12px;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* ── Buttons ──────────────────────────────── */
+button, input[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border: none;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .15s, transform .1s;
+}
+
+input[type="submit"],
+button[type="submit"],
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  width: 100%;
+  margin-top: 4px;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover,
+.btn-primary:hover {
+  background: var(--accent-h);
+}
+
+input[type="submit"]:active,
+button[type="submit"]:active {
+  transform: scale(.98);
+}
+
+.btn-secondary {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover { background: var(--border); }
+
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn-danger:hover { background: var(--danger-h); }
+
+/* ── Table (Subject List) ─────────────────── */
+.table-wrapper {
+  width: 100%;
+  max-width: 680px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.table-header {
+  padding: 20px 24px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+thead tr {
+  background: var(--bg);
+}
+
+th {
+  text-align: left;
+  padding: 10px 24px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+tbody tr:last-child td { border-bottom: none; }
+
+tbody tr:hover { background: #f9fafb; }
+
+/* Action buttons inside table */
+td button {
+  padding: 5px 14px;
+  font-size: 0.8125rem;
+  width: auto;
+  margin-top: 0;
+}
+
+/* ── Info Badge (matric no) ───────────────── */
+.badge {
+  display: inline-block;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+/* ── Alert / Flash messages ───────────────── */
+.alert {
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  border-left: 3px solid;
+}
+
+.alert-error   { background: #fef2f2; border-color: var(--danger);  color: #991b1b; }
+.alert-success { background: #f0fdf4; border-color: var(--success);  color: #166534; }
+.alert-info    { background: #eff6ff; border-color: var(--accent);   color: #1e40af; }
+
+/* ── Utility ──────────────────────────────── */
+.text-muted { color: var(--muted); font-size: 0.875rem; }
+.mt-8  { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.gap-8 { display: flex; gap: 8px; }
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 480px) {
+  .card { padding: 28px 20px; }
+  th, td { padding: 10px 14px; }
+  .table-header { padding: 16px 14px 10px; }
+}

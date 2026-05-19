@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Registration</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="card">
+            <h2>Register New Student</h2>
+            <p class="card-subtitle">Create your student account.</p>
+            <form action="UserServlet" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="action" value="register">
+                <div class="field">
+                    <label>Matric No</label>
+                    <input type="text" name="matricNo" placeholder="e.g. 2023001234" required>
+                </div>
+                <div class="field">
+                    <label>Full Name</label>
+                    <input type="text" name="fullname" placeholder="Your full name" required>
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="••••••••" required>
+                </div>
+                <div class="field">
+                    <label>Profile Picture</label>
+                    <input type="file" name="profileImage" accept="image/*" required>
+                </div>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+    </body>
+</html>
